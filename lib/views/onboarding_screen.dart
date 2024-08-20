@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notiva/constants.dart';
-import 'package:notiva/views/home_screen.dart';
+import 'package:notiva/views/notes_screen.dart';
 import 'package:notiva/views/intro_screens.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -90,7 +90,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     await prefs.setBool('onboarding', true);
 
                     if (!mounted) return;
-                    Navigator.pushReplacementNamed(context, HomeScreen.id);
+                    Navigator.pushReplacementNamed(context, NotesScreen.id);
                   } else {
                     _controller.nextPage(
                         duration: const Duration(milliseconds: 300),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notiva/views/home_screen.dart';
+import 'package:notiva/views/add_note_screen.dart';
+import 'package:notiva/views/notes_screen.dart';
 import 'package:notiva/views/onboarding_screen.dart';
 import 'package:notiva/views/search_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -22,11 +23,12 @@ class Notiva extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        HomeScreen.id: (context) => const HomeScreen(),
+        NotesScreen.id: (context) => const NotesScreen(),
         OnBoardingScreen.id: (context) => OnBoardingScreen(),
         SearchScreen.id: (context) => const SearchScreen(),
+        AddNoteScreen.id: (context) => const AddNoteScreen(),
       },
-      initialRoute: onboarding ? HomeScreen.id : OnBoardingScreen.id,
+      initialRoute: onboarding ? NotesScreen.id : OnBoardingScreen.id,
     );
   }
 }
