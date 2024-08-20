@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notiva/constants.dart';
+import 'package:notiva/widgets/notes_view_body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,20 +11,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
-      appBar: AppBar(
-        title: const Text('Home Screen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/second');
-          },
-          child: const Text(
-            'Go to Second Screen',
-            style: TextStyle(color: Color.fromARGB(255, 1, 0, 0)),
-          ),
-        ),
-      ),
+      body: const NotesViewBody(),
     );
   }
 }

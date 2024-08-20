@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notiva/views/home_screen.dart';
 import 'package:notiva/views/onboarding_screen.dart';
+import 'package:notiva/views/search_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -23,6 +24,7 @@ class Notiva extends StatelessWidget {
       routes: {
         HomeScreen.id: (context) => const HomeScreen(),
         OnBoardingScreen.id: (context) => OnBoardingScreen(),
+        SearchScreen.id: (context) => const SearchScreen(),
       },
       initialRoute: onboarding ? HomeScreen.id : OnBoardingScreen.id,
     );
