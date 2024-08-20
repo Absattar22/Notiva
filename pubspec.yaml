@@ -88,9 +88,15 @@ flutter:
     - family: figma
       fonts:
         - asset: assets/fonts/Figtree-Italic-VariableFont_wght.ttf
+
     - family: kalam
       fonts:
         - asset: assets/fonts/Kalam-Bold.ttf
+        
+    - family: poppins
+      fonts:
+        - asset: assets/fonts/Poppins SemiBold 600.ttf
+        
         
           
   #     fonts:
