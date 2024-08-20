@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notiva/views/add_note_screen.dart';
 import 'package:notiva/views/notes_screen.dart';
 import 'package:notiva/views/onboarding_screen.dart';
 import 'package:notiva/views/search_screen.dart';
@@ -26,7 +25,7 @@ class Notiva extends StatelessWidget {
         NotesScreen.id: (context) => const NotesScreen(),
         OnBoardingScreen.id: (context) => OnBoardingScreen(),
         SearchScreen.id: (context) => const SearchScreen(),
-        AddNoteScreen.id: (context) => const AddNoteScreen(),
+      
       },
       initialRoute: onboarding ? NotesScreen.id : OnBoardingScreen.id,
     );

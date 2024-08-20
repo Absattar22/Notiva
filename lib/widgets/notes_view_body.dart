@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notiva/constants.dart';
 import 'package:notiva/widgets/custom_app_bar.dart';
-import 'package:notiva/widgets/notes_lisr_builder.dart';
+import 'package:notiva/widgets/notes_list_builder.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
