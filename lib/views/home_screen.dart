@@ -18,7 +18,10 @@ class HomeScreen extends StatelessWidget {
           onPressed: () {
             Navigator.pushNamed(context, '/second');
           },
-          child: const Text('Go to Second Screen' , style: TextStyle(color: Colors.white),),
+          child: const Text(
+            'Go to Second Screen',
+            style: TextStyle(color: Color.fromARGB(255, 1, 0, 0)),
+          ),
         ),
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notiva/screens/home_screen.dart';
-import 'package:notiva/screens/onboarding_screen.dart';
+import 'package:notiva/views/home_screen.dart';
+import 'package:notiva/views/onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -15,7 +15,7 @@ void main() async {
 // ignore: camel_case_types, use_key_in_widget_constructors
 class Notiva extends StatelessWidget {
   final bool onboarding;
-  const Notiva({super.key,  this.onboarding = false});
+  const Notiva({super.key, this.onboarding = false});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

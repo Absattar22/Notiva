@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notiva/constants.dart';
-import 'package:notiva/screens/home_screen.dart';
-import 'package:notiva/screens/intro_screens.dart';
+import 'package:notiva/views/home_screen.dart';
+import 'package:notiva/views/intro_screens.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
