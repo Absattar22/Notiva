@@ -5,20 +5,28 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        // Save the note
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromARGB(255, 135, 17, 194),
-        shape: RoundedRectangleBorder(
+    return GestureDetector(
+      child: Container(
+        height: 48,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
+          gradient: const LinearGradient(
+            colors: [
+              Color.fromARGB(255, 14, 145, 193),
+              Color.fromARGB(255, 169, 14, 193),
+            ],
+          ),
         ),
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-      ),
-      child: const Text(
-        'Add Note',
-        style: TextStyle(color: Colors.white),
+        child: const Center(
+          child: Text(
+            'Add Note',
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold),
+          ),
+        ),
       ),
     );
   }
