@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:notiva/views/search_screen.dart';
 
-class CustomSearchIcon extends StatelessWidget {
-  const CustomSearchIcon({
-    super.key,
+class CustomIcon extends StatelessWidget {
+  const CustomIcon({
+    super.key, required this.icon,
   });
+
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +21,8 @@ class CustomSearchIcon extends StatelessWidget {
         onPressed: () {
           Navigator.pushNamed(context, SearchScreen.id);
         },
-        icon: const Icon(
-          Icons.search,
+        icon: Icon(
+          icon,
           color: Colors.white,
         ),
       ),
