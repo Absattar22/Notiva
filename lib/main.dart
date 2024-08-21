@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:notiva/views/edit_note_screen.dart';
 import 'package:notiva/views/notes_screen.dart';
 import 'package:notiva/views/onboarding_screen.dart';
 import 'package:notiva/views/search_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   final bool onboarding = prefs.getBool('onboarding') ?? false;
-  runApp(Notiva(
-    onboarding: onboarding,
-  ));
+
+  await Hive.initFlutter();
+  await Hive.openBox('notes');
+  runApp(Notiva( onboarding: onboarding));
 }
 
 // ignore: camel_case_types, use_key_in_widget_constructors
