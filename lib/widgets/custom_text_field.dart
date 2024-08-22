@@ -5,7 +5,7 @@ class CustomTextField extends StatelessWidget {
     super.key,
     required this.hintText,
     this.maxLines = 1,
-    required this.labelText, this.onSaved, this.validator,
+    required this.labelText, this.onSaved, this.validator, this.onChanged,
   });
 
   final String hintText;
@@ -14,6 +14,7 @@ class CustomTextField extends StatelessWidget {
 
   final void Function(String?)? onSaved;
   final String? Function(String?)? validator;
+  final void Function(String?)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,7 @@ class CustomTextField extends StatelessWidget {
       padding: const EdgeInsets.all(2), // Adjust padding as needed
       child: TextFormField(
         validator: validator,
+        onChanged: onChanged,
         onSaved: onSaved,
         cursorColor: Colors.white,
         maxLines: maxLines,

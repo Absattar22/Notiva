@@ -35,7 +35,6 @@ class Notiva extends StatelessWidget {
           NotesScreen.id: (context) => const NotesScreen(),
           OnBoardingScreen.id: (context) => OnBoardingScreen(),
           SearchScreen.id: (context) => const SearchScreen(),
-          EditNoteScreen.id: (context) => const EditNoteScreen(),
         },
         initialRoute: onboarding ? NotesScreen.id : OnBoardingScreen.id,
       ),
