@@ -16,7 +16,7 @@ class NotesItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(left: 16.0, top: 24.0, bottom: 24.0),
         decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 223, 175, 29),
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
@@ -53,10 +53,11 @@ class NotesItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 16.0),
               child: Text(
-                note.date,
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.6),
-                  fontSize: 16.0,
+                note.date.toString(),
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 14, 14, 14),
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
