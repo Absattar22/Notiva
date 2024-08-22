@@ -21,18 +21,23 @@ class NotesListBuilder extends StatelessWidget {
         List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes!;
 
         if (notes.isEmpty) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset('assets/images/no-notes.gif'),
-              const Text(
-                'No notes yet',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                ),
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 100),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Image.asset('assets/images/no-notes.gif'),
+                  const Text(
+                    'There Are No Notes Yet !',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           );
         } else {
           return ListView.builder(

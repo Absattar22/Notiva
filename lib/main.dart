@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:notiva/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notiva/models/note_model.dart';
 import 'package:notiva/simple_bloc_observer.dart';
 import 'package:notiva/views/edit_note_screen.dart';
@@ -14,7 +15,6 @@ void main() async {
   final prefs = await SharedPreferences.getInstance();
   final bool onboarding = prefs.getBool('onboarding') ?? false;
 
-  
   await Hive.initFlutter();
   Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(NoteModelAdapter());
@@ -22,21 +22,23 @@ void main() async {
   runApp(Notiva(onboarding: onboarding));
 }
 
-
 class Notiva extends StatelessWidget {
   final bool onboarding;
   const Notiva({super.key, this.onboarding = false});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: {
-        NotesScreen.id: (context) => const NotesScreen(),
-        OnBoardingScreen.id: (context) => OnBoardingScreen(),
-        SearchScreen.id: (context) => const SearchScreen(),
-        EditNoteScreen.id: (context) => const EditNoteScreen(),
-      },
-      initialRoute: onboarding ? NotesScreen.id : OnBoardingScreen.id,
+    return BlocProvider(
+      create: (context) => NotesCubit(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        routes: {
+          NotesScreen.id: (context) => const NotesScreen(),
+          OnBoardingScreen.id: (context) => OnBoardingScreen(),
+          SearchScreen.id: (context) => const SearchScreen(),
+          EditNoteScreen.id: (context) => const EditNoteScreen(),
+        },
+        initialRoute: onboarding ? NotesScreen.id : OnBoardingScreen.id,
+      ),
     );
   }
 }
