@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:notiva/models/note_model.dart';
 import 'package:notiva/views/edit_note_screen.dart';
 
 class NotesItem extends StatelessWidget {
-  const NotesItem({super.key});
+  const NotesItem({super.key, required this.note});
+
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +23,9 @@ class NotesItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: const Text(
-                'Note Title',
-                style: TextStyle(
+              title: Text(
+                note.title,
+                style: const TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0),
                   fontSize: 24.0,
                   fontFamily: 'poppins',
@@ -31,7 +34,7 @@ class NotesItem extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Text(
-                  'Note Description Note Description Note Description Note Description',
+                  note.subTitle,
                   style: TextStyle(
                     color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
                     fontSize: 16.0,
@@ -50,7 +53,7 @@ class NotesItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 16.0),
               child: Text(
-                '${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}',
+                note.date,
                 style: TextStyle(
                   color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.6),
                   fontSize: 16.0,

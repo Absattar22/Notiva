@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:notiva/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notiva/models/note_model.dart';
 import 'package:notiva/simple_bloc_observer.dart';
 import 'package:notiva/views/edit_note_screen.dart';
@@ -15,14 +14,15 @@ void main() async {
   final prefs = await SharedPreferences.getInstance();
   final bool onboarding = prefs.getBool('onboarding') ?? false;
 
-  Bloc.observer = SimpleBlocObserver();
+  
   await Hive.initFlutter();
+  Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(NoteModelAdapter());
   await Hive.openBox<NoteModel>('notes');
   runApp(Notiva(onboarding: onboarding));
 }
 
-// ignore: camel_case_types, use_key_in_widget_constructors
+
 class Notiva extends StatelessWidget {
   final bool onboarding;
   const Notiva({super.key, this.onboarding = false});
