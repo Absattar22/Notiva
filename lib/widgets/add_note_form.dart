@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:notiva/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notiva/helper/snack_bar.dart';
 import 'package:notiva/models/note_model.dart';
+import 'package:notiva/widgets/color_list_view.dart';
 import 'package:notiva/widgets/custom_button.dart';
 import 'package:notiva/widgets/custom_text_field.dart';
 
@@ -52,6 +54,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
               return null;
             },
           ),
+          const Padding(
+            padding: EdgeInsets.only(top: 24.0),
+            child: ColorListView(),
+          ),
           const SizedBox(height: 32),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
@@ -71,6 +77,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         date: formattedDate,
                         color: const Color.fromARGB(255, 18, 113, 150).value);
                     BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+                    ShowSnackBar(context, 'Note Added Successfully',
+                        const Color.fromARGB(255, 30, 117, 193), Icons.check);
                   } else {
                     setState(() {
                       autovalidateMode = AutovalidateMode.always;

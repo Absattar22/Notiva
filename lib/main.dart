@@ -3,7 +3,6 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:notiva/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notiva/models/note_model.dart';
 import 'package:notiva/simple_bloc_observer.dart';
-import 'package:notiva/views/edit_note_screen.dart';
 import 'package:notiva/views/notes_screen.dart';
 import 'package:notiva/views/onboarding_screen.dart';
 import 'package:notiva/views/search_screen.dart';

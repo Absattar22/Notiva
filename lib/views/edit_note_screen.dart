@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:notiva/constants.dart';
 import 'package:notiva/models/note_model.dart';
 import 'package:notiva/widgets/edit_note_view_body.dart';
-import 'package:notiva/widgets/notes_view_body.dart';
+
 
 class EditNoteScreen extends StatelessWidget {
   const EditNoteScreen({super.key , required this.note});

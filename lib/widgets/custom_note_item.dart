@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart'; // Import the Slidable package
 import 'package:notiva/cubits/notes_cubit/notes_cubit.dart';
+import 'package:notiva/helper/snack_bar.dart';
 import 'package:notiva/models/note_model.dart';
 import 'package:notiva/views/edit_note_screen.dart';
 
@@ -20,6 +21,8 @@ class NotesItem extends StatelessWidget {
           SlidableAction(
             onPressed: (context) {
               BlocProvider.of<NotesCubit>(context).deleteNote(note);
+              ShowSnackBar(context, 'Note Deleted Successfully',
+                  const Color.fromARGB(255, 211, 14, 14), Icons.check);
             },
             backgroundColor: const Color.fromARGB(255, 221, 14, 52),
             foregroundColor: Colors.white,
@@ -66,11 +69,13 @@ class NotesItem extends StatelessWidget {
                 trailing: IconButton(
                   onPressed: () {
                     BlocProvider.of<NotesCubit>(context).deleteNote(note);
+                    ShowSnackBar(context, 'Note Deleted Successfully',
+                        const Color.fromARGB(255, 211, 14, 14), Icons.check);
                   },
                   icon: const Icon(
                     size: 30.0,
                     Icons.delete,
-                    color: Color.fromARGB(255, 174, 27, 27),
+                    color: Color.fromARGB(255, 0, 0, 0),
                   ),
                 ),
               ),

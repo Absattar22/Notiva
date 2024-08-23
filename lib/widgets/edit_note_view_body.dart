@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notiva/cubits/notes_cubit/notes_cubit.dart';
+import 'package:notiva/helper/snack_bar.dart';
 import 'package:notiva/models/note_model.dart';
 import 'package:notiva/widgets/custom_app_bar.dart';
 import 'package:notiva/widgets/custom_text_field.dart';
+import 'package:notiva/widgets/edit_notes_color_list.dart';
 
 class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({
@@ -35,6 +37,8 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
                 widget.note.save();
                 Navigator.pop(context);
                 BlocProvider.of<NotesCubit>(context).fetchALlNotes();
+                ShowSnackBar(context, 'Note Updated Successfully',
+                        const Color.fromARGB(255, 30, 117, 193), Icons.check);
               }),
           const SizedBox(height: 40),
           CustomTextField(
@@ -52,6 +56,12 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             hintText: widget.note.subTitle,
             labelText: 'Enter Note Description',
             maxLines: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 36),
+            child: EditNotesColorList(
+              note: widget.note,
+            ),
           ),
         ],
       ),

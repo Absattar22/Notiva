@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notiva/constants.dart';
-import 'package:notiva/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notiva/widgets/custom_button_sheet.dart';
 import 'package:notiva/widgets/notes_view_body.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notiva/views/search_screen.dart';
+
 
 class CustomIcon extends StatelessWidget {
   const CustomIcon({
