@@ -28,7 +28,7 @@ Screenshots 📷
 
 Demo Video 🎥
 
-- https://github.com/user-attachments/assets/a2736eb7-8a8c-4904-ba13-0c03978c4e8a
+https://github.com/user-attachments/assets/2db189da-4b58-427e-a921-8bea63b74316
 
 
 ## Contact With Me:
