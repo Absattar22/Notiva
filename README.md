@@ -10,7 +10,7 @@ Notiva is a powerful, user-friendly note-taking app built with Flutter. Whether 
 - Perfect Search Functionality: Quickly find the notes you need with an efficient search feature.
 - Beautiful UI: Enjoy a sleek, modern interface that enhances your productivity.
 
-Screenshots 📷
+# Screenshots 📷
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
     <img src="https://github.com/user-attachments/assets/bb0d2590-f088-41b0-9bd6-23be985455a6" alt="Intro Screen" width="150"/>
@@ -26,7 +26,7 @@ Screenshots 📷
 </div>
 
 
-Demo Video 🎥
+# Demo Video 🎥
 
 https://github.com/user-attachments/assets/2db189da-4b58-427e-a921-8bea63b74316
 
