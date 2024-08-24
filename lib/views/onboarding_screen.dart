@@ -78,7 +78,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ],
           ),
           Positioned(
-            bottom: 80,
+            bottom: 40,
             left: 0,
             right: 0,
             child: Padding(
@@ -114,7 +114,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ),
           ),
           Positioned(
-            bottom: 180,
+            bottom: 130,
             left: 0,
             right: 0,
             child: Row(

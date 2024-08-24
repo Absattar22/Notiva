@@ -20,7 +20,7 @@ class IntroScreens extends StatelessWidget {
         padding: const EdgeInsets.only(top: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment
-              .center, // Align items horizontally in the center
+              .center, 
           children: [
             Container(
               child: Image.asset(
@@ -28,11 +28,11 @@ class IntroScreens extends StatelessWidget {
                 fit: BoxFit.contain,
               ),
             ),
-            const SizedBox(height: 20), // Add spacing between image and text
+            const SizedBox(height: 20), 
             Text(
               title,
               style: const TextStyle(
-                fontSize: 30,
+                fontSize: 26,
                 fontWeight: FontWeight.bold,
                 color: Color.fromARGB(255, 255, 255, 255),
               ),

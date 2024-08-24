@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:notiva/constants.dart';
-import 'package:notiva/models/note_model.dart'; // Ensure this points to your Note model
-import 'package:notiva/views/edit_note_screen.dart'; // Import the new EditNoteScreen
+import 'package:notiva/models/note_model.dart';
+import 'package:notiva/widgets/notes_list_builder.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -48,10 +48,7 @@ class _SearchScreenState extends State<SearchScreen> {
       backgroundColor: kPrimaryColor,
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -107,57 +104,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         ),
                       ),
                     )
-                  : ListView.builder(
-                      itemCount: _searchResults.length,
-                      itemBuilder: (context, index) {
-                        int reversedIndex = _searchResults.length - index - 1;
-                        final note = _searchResults[reversedIndex];
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4),
-                          child: Card(
-                            color: Colors.white.withOpacity(0.1),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: ListTile(
-                              contentPadding: const EdgeInsets.all(16),
-                              title: Text(
-                                note.title,
-                                style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              subtitle: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    note.subTitle,
-                                    style: const TextStyle(
-                                        color: Colors.white70, fontSize: 16),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    note.date,
-                                    style: const TextStyle(
-                                        color: Colors.white54, fontSize: 14),
-                                  ),
-                                ],
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        EditNoteScreen(note: note),
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        );
-                      },
-                    ),
+                  : NotesListBuilder(notes: _searchResults), // Use NotesListBuilder with search results
             ),
           ],
         ),

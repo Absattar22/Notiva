@@ -31,7 +31,7 @@ class CustomButton extends StatelessWidget {
                   'Add Note',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16.0,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
         ),

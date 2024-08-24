@@ -5,7 +5,9 @@ import 'package:notiva/models/note_model.dart';
 import 'package:notiva/widgets/custom_note_item.dart';
 
 class NotesListBuilder extends StatelessWidget {
-  const NotesListBuilder({super.key});
+  final List<NoteModel>? notes;
+
+  const NotesListBuilder({super.key, this.notes});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +20,9 @@ class NotesListBuilder extends StatelessWidget {
             ),
           );
         }
-        List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes!;
+        final notesToDisplay = notes ?? BlocProvider.of<NotesCubit>(context).notes!;
 
-        if (notes.isEmpty) {
+        if (notesToDisplay.isEmpty) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 100),
             child: SingleChildScrollView(
@@ -28,7 +30,7 @@ class NotesListBuilder extends StatelessWidget {
                 children: [
                   Image.asset('assets/images/no-notes.gif'),
                   const Text(
-                    'There Are No Notes Yet !',
+                    'No Notes Found',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
@@ -42,12 +44,12 @@ class NotesListBuilder extends StatelessWidget {
         } else {
           return ListView.builder(
             padding: EdgeInsets.zero,
-            itemCount: notes.length,
+            itemCount: notesToDisplay.length,
             itemBuilder: (context, index) {
-              int reverseIndex = notes.length - 1 - index;
+              int reverseIndex = notesToDisplay.length - 1 - index;
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: NotesItem(note: notes[reverseIndex]),
+                child: NotesItem(note: notesToDisplay[reverseIndex]),
               );
             },
           );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
@@ -35,7 +36,7 @@ class CustomTextField extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
       ),
-      padding: const EdgeInsets.all(2), // Adjust padding as needed
+      padding:  const EdgeInsets.all(2), // Adjust padding as needed
       child: TextFormField(
         controller: controller, // Use the controller
         validator: validator,
