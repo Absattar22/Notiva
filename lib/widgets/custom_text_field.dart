@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
@@ -29,14 +28,14 @@ class CustomTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         gradient: const LinearGradient(
           colors: [
-            Color.fromARGB(255, 36, 161, 105), // Start color
-            Color.fromARGB(255, 80, 95, 141), // End color
+            Color.fromARGB(255, 42, 6, 115), // Start color
+            Color.fromARGB(255, 92, 20, 123), // End color
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
       ),
-      padding:  const EdgeInsets.all(2), // Adjust padding as needed
+      padding: const EdgeInsets.all(2), // Adjust padding as needed
       child: TextFormField(
         controller: controller, // Use the controller
         validator: validator,

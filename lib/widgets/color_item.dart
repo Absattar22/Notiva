@@ -9,15 +9,15 @@ class ColorItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return isSelected
         ? CircleAvatar(
-            radius: 40,
+            radius: 34,
             backgroundColor: const Color.fromARGB(255, 255, 255, 255),
             child: CircleAvatar(
-              radius: 36,
+              radius: 32,
               backgroundColor: color,
             ),
           )
         : CircleAvatar(
-            radius: 40,
+            radius: 34,
             backgroundColor: color,
           );
   }

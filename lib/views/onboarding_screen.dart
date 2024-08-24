@@ -93,7 +93,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     Navigator.pushReplacementNamed(context, NotesScreen.id);
                   } else {
                     _controller.nextPage(
-                        duration: const Duration(milliseconds: 300),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInCirc);
                   }
                 },

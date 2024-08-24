@@ -18,12 +18,12 @@ class CustomButton extends StatelessWidget {
           gradient: const LinearGradient(
             colors: [
               Color.fromARGB(255, 14, 145, 193),
-              Color.fromARGB(255, 169, 14, 193),
+              Color.fromARGB(255, 148, 35, 168),
             ],
           ),
         ),
         child: Center(
-          child: isLoading 
+          child: isLoading
               ? const CircularProgressIndicator(
                   color: Color.fromARGB(255, 9, 92, 175),
                 )
